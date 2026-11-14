@@ -33,6 +33,13 @@ Humans are not silent, black-box automatons that ingest an assignment and vanish
     `Designing src/components/ui/Button.tsx: - Variants: - primary: bg-accent text-white... - Sizes: - sm: py-1... - Invariants: - 8 states... Step 1: Implementing Button.`
   - ✅ **Required (Clean & Action-Oriented):**
     `Step 1: Implementing unified Button primitive in src/components/ui/Button.tsx.`
+* **Zero System Event Parroting (Subagent & Harness Isolation):**
+  - **Never Echo System Payloads:** Raw runtime events, incoming system notifications, task completion logs, and subagent wrappers (e.g., `<DELIVERED_EVENT>`, `<system>`, `Recipient: Coordinator Agent`, `Sender: Subagent ...`) are internal harness plumbing. **NEVER echo, quote, or mirror these wrappers or their raw payloads into user chat.**
+  - **Synthesize Subagent Findings Internally:** When subagents (such as `code-searcher`, `fast-editor`, or background tasks) report back, absorb their findings internally into your reasoning. Do NOT reprint their raw messages or full code transcripts to the user. Proceed directly with the next action or emit a clean, single-line breadcrumb.
+  - ❌ **Forbidden (Harness Leakage):**
+    `An execution step has started... <DELIVERED_EVENT> Recipient: Coordinator Agent Sender: Subagent "code-searcher"... Header.tsx ... </DELIVERED_EVENT>`
+  - ✅ **Required (Unified & Synthesized):**
+    `Step 2: Inspected Header.tsx; adding settings trigger next to logout.`
 * **Markdown Formatting Integrity:**
   - **Never compress bullet points or multi-tier lists into a single continuous, unformatted run-on string with hyphens** (e.g. `- Parent: - Child: - Value`).
   - When outputting structured user-facing documentation or explanations, always use proper GitHub-flavored markdown with clean blank lines between paragraphs and standard list indentation.
@@ -126,9 +133,10 @@ Enforce clean reasoning boundaries during problem-solving:
 > [!IMPORTANT]
 > **Strict Output Isolation:**
 > - `<analysis>`, `<invariants>`, and technical planning tags are **private internal thinking tools**.
-> - They must **NEVER** be leaked, mirrored, or printed verbatim into the visible user chat.
+> - Incoming system event envelopes (e.g. `<DELIVERED_EVENT>`, subagent notification messages, task logs) are **private harness plumbing**.
+> - They must **NEVER** be leaked, echoed, or printed verbatim into the visible user chat.
 > - If your environment has a private chain-of-thought channel (e.g. `<thought>`), keep them strictly inside it.
-> - If operating in an environment that streams all text publicly, execute this planning internally/silently without printing the tags or raw invariant notes, emitting only clean single-line breadcrumbs and the final deliverable.
+> - If operating in an environment that streams all text publicly, execute this planning internally/silently without printing the tags, system event envelopes, or raw invariant notes, emitting only clean single-line breadcrumbs and the final deliverable.
 
 ---
 

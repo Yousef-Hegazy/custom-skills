@@ -10,7 +10,10 @@ These skills are designed to be universally compatible across AI developer envir
 
 | Skill | Description | Direct Link |
 | :--- | :--- | :--- |
+| [`real-world-integration-testing`](skills/real-world-integration-testing/SKILL.md) | High-discipline, non-stubbed integration and contract testing protocol for TypeScript, Rust, Python, and Go. Enforces real dependency wiring, wire-level third-party interception (WireMock/MSW), triple-layer contract assertions, and uncommitted local sabotage checks to eliminate false-positive test suites. | [skills/real-world-integration-testing/SKILL.md](skills/real-world-integration-testing/SKILL.md) |
 | [`opus-rigor`](skills/opus-rigor/SKILL.md) | High-discipline strategic & engineering protocol. Elevates any LLM to Claude Opus-level rigor: epistemic humility, transparent collaboration, candid pushback, proactive clarification, two-phase planning, and surgical verification. | [skills/opus-rigor/SKILL.md](skills/opus-rigor/SKILL.md) |
+| [`senior-react-tauri-architect`](skills/senior-react-tauri-architect/SKILL.md) | Staff Desktop & Frontend Architect protocol for React 19+, Vite, and Tauri v1/v2. Zero-lag 60fps UI thread invariants, non-blocking asynchronous IPC, functional GoF patterns (Facade, Strategy, Adapter), WebView memory hygiene, and atomic Zustand selectors. | [skills/senior-react-tauri-architect/SKILL.md](skills/senior-react-tauri-architect/SKILL.md) |
+| [`senior-nextjs-architect`](skills/senior-nextjs-architect/SKILL.md) | Staff Full-Stack Next.js Architect protocol for Next.js 15/16+, React 19+, and App Router. Leaf-only `"use client"`, asynchronous dynamic APIs (`params`, `cookies`), Server Action primitives (`useActionState`, `useOptimistic`), streaming Suspense, and functional GoF enterprise architecture. | [skills/senior-nextjs-architect/SKILL.md](skills/senior-nextjs-architect/SKILL.md) |
 
 ---
 
